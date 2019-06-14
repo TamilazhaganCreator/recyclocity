@@ -1,21 +1,291 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Raleway", sans-serif
+  }
 
-<router-outlet></router-outlet>
+  body,
+  html {
+    height: 100%;
+    line-height: 1.8;
+  }
+
+  /* Full height image header */
+  .bgimg-1 {
+    background-position: center;
+    background-size: cover;
+    background-image: url("assets/dump.jpg");
+    min-height: 100%;
+  }
+
+  .re-bar .re-button {
+    padding: 16px;
+  }
+</style>
+
+<body>
+  <div>
+    <!-- Navbar (sit on top) -->
+    <div class="re-top">
+      <div class="re-bar re-white re-card" id="myNavbar"
+        style="background-color: #56351E !important;color:white !important">
+        <a href="#home" class="re-bar-item re-button re-wide">Recyclocity</a>
+        <!-- Right-sided navbar links -->
+        <div class="re-right re-hide-small">
+          <a href="#what" class="re-bar-item re-button">WHAT</a>
+          <a href="#services" class="re-bar-item re-button">SERVICES</a>
+          <a href="#about" class="re-bar-item re-button">ABOUT</a>
+          <a href="#team" class="re-bar-item re-button"><i class="fa fa-user"></i> TEAM</a>
+          <a href="#contact" class="re-bar-item re-button"><i class="fa fa-envelope"></i> CONTACT</a>
+        </div>
+        <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+
+        <a href="javascript:void(0)" class="re-bar-item re-button re-right re-hide-large re-hide-medium"
+          (click)="open()">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Sidebar on small screens when clicking the menu icon -->
+    <nav class="re-sidebar re-bar-block re-black re-card re-animate-left re-hide-medium re-hide-large"
+      style="display:none" id="mySidebar">
+      <a href="javascript:void(0)" (click)="close()" style="text-align: right"
+        class="re-bar-item re-button re-large re-padding-16">X</a>
+      <a href="#what" (click)="close()" class="re-bar-item re-button">WHAT</a>
+      <a href="#services" (click)="close()" class="re-bar-item re-button">SERVICES</a>
+      <a href="#about" (click)="close()" class="re-bar-item re-button">ABOUT</a>
+      <a href="#team" (click)="close()" class="re-bar-item re-button">TEAM</a>
+      <a href="#contact" (click)="close()" class="re-bar-item re-button">CONTACT</a>
+    </nav>
+  </div>
+  <div class="cont" id="home">
+    <img src="assets/dump.jpg" style="width:100%;">
+    <div class="center-one">Are you happy ?</div>
+  </div>
+  <!-- Promo Section - "We know design" -->
+  <div class="re-container re-light-grey" style="padding:128px 16px">
+    <div class="re-row-padding">
+      <div class="re-col m6">
+        <h3>" Urban India (about 377 million people) generates 62 million tonnes of municipal solid waste each year, of
+          this about 43 million tonnes (70%) is collected and 11.9 million tonnes (20%) is treated. About 31 million
+          tonnes (50%) is dumped in landfill sites.With changing consumption patterns and rapid economic growth it is
+          estimated that urban municipal solid waste
+          generation will increase to 165 million tonnes in 2030. "</h3>
+      </div>
+      <div class="re-col m6">
+        <img class="re-image re-round-large" src="assets/threats.jpg" alt="Buildings" width="700" height="394">
+      </div>
+    </div>
+  </div>
+  <!-- The what Section -->
+  <div class="re-container re-content re-center re-padding-64" style="max-width:800px;" id="what">
+    <h2 class="re-wide">WHAT</h2>
+    <p class="re-opacity"><i>We do ?</i></p>
+    <p class="re-justify">Imagine cities with landfills above sea level , what if we say it can be recycled into a
+      resource. That's
+      the concept behind our investment on eco friendly environment designed to convert hard to recycle waste into
+      a
+      useful one.Imagine cities with landfills above sea level , what if we say it can be recycled into a
+      resource.
+      That's the concept behind our investment on eco friendly environment designed to convert hard to recycle
+      waste
+      into a useful one.</p>
+  </div>
+  <div class="re-container re-content re-center re-padding-64" style="max-width:800px;padding-top: 0 !important">
+    <h2 class="re-wide">WHY</h2>
+    <p class="re-opacity"><i>We do ?</i></p>
+    <p class="re-justify"> Because we're tired and not happy about our current environmental situation.
+      Aren't you ?</p>
+  </div>
+  <div class="re-container re-content re-center re-padding-64"
+    style="max-width:800px;padding-top: 0 !important;padding-bottom: 0 !important">
+    <h2 class="re-wide">HOW</h2>
+    <p class="re-opacity"><i>We do ?</i></p>
+    <p class="re-justify">As a start-up we collaborated with apartments, Tech parks and commeercial
+      area to obtain their waste.And then the collected waste is transported to
+      our facility for segregation. After segregation the resource is further given to authenticated recyclers for
+      better outcomes</p>
+  </div>
+  <!---Service section-->
+  <!-- Clarity Section -->
+
+  <div class="re-container" style="padding:64px 16px;padding-bottom:0" id="services">
+    <div class="re-padding-64 re-light-grey" style="padding-top: 32px !important">
+      <h3 class="re-center">Services</h3>
+      <p class="re-center re-large" style="padding-bottom: 32px;">Bulk Waste Generators</p>
+      <div class="re-row-padding">
+        <div class="re-col l4 m6">
+          <img class="re-image re-round-large  re-grayscale" src="assets/apartment.jpg" alt="App" width="335"
+            height="471">
+        </div>
+        <div class="re-col l8 m6">
+          <h1 class="re-xxxlarge re-text-red"><b>Apartments</b></h1>
+          <p><span class="re-xlarge">Waste management should begin at home ,</span>
+            so we create awareness among the residential as our first priority
+            because urban areas all over the country struggle with the problem of exponentially growing
+            waste, recycle waste
+            at the source leads to an 80% reduction in the waste that is dumped as landfills.
+        </div>
+      </div>
+    </div>
+    <div class="re-padding-64 re-light-grey">
+      <div class="re-row-padding">
+        <div class="re-col l4 m6">
+          <img class="re-image re-round-large  re-grayscale" src="assets/techpark.jpg" alt="App" width="335"
+            height="471">
+        </div>
+        <div class="re-col l8 m6">
+          <h1 class="re-xxxlarge re-text-red"><b>Tech Parks</b></h1>
+          <p><span class="re-xlarge">Solid waste is a major challenge</span>
+            for tech parks due to the large quantity of wastes and the variability of waste
+            characteristics and become very crucial so in order to avoid those issues our entity will assess
+            the waste from
+            the tech park by converting the waste into a resourceful energy and to seek waste reduction ,
+            reuse and
+            recycling opportunities both at the individual company level and among different tenant
+            corporate.This adoption
+            of this method can bring both economic and environmental benefits.
+        </div>
+      </div>
+    </div>
+    <div class="re-padding-64 re-light-grey">
+      <div class="re-row-padding">
+        <div class="re-col l4 m6">
+          <img class="re-image re-round-large re-grayscale" src="assets/mall.jpg" alt="App" width="335" height="471">
+        </div>
+        <div class="re-col l8 m6">
+          <h1 class="re-xxxlarge re-text-red"><b>Commercial Areas & Institutions</b></h1>
+          <p><span class="re-xlarge">Waste generated here is quite bulk</span>
+            with vast types of waste and recycling is an archaic procedure in malls so
+            our recyclocity has the best implementation plans to overcome those hurdles by creating
+            awareness inside the
+            commercial place and by explaining to shopping center staff and tenants to put trash and
+            recyclables into
+            separate containers making recycling simple and clean.
+        </div>
+      </div>
+    </div>
+    <div class="re-padding-64 re-light-grey" style="padding-bottom: 0">
+      <div class="re-row-padding">
+        <div class="re-col l4 m6">
+          <img class="re-image re-round-large  re-grayscale" src="assets/event.jpg" alt="App" width="335" height="471">
+        </div>
+        <div class="re-col l8 m6">
+          <h1 class="re-xxxlarge re-text-red"><b>Events</b></h1>
+          <p><span class="re-xlarge">Waste management should begin at home ,</span>
+            so we create awareness among the residential as our first priority
+            because urban areas all over the country struggle with the problem of exponentially growing
+            waste, recycle waste
+            at the source leads to an 80% reduction in the waste that is dumped as landfills.
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- About Section -->
+  <div class="re-container" style="padding:64px 16px" id="about">
+    <h3 class="re-center">ABOUT THE COMPANY</h3>
+    <p class="re-center re-large">Key features of our company</p>
+    <div class="re-row-padding re-center" style="margin-top:64px">
+      <div class="re-quarter">
+        <i class="fa fa-desktop re-margin-bottom re-jumbo re-center"></i>
+        <p class="re-large">Responsive</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+          labore
+          et dolore.</p>
+      </div>
+      <div class="re-quarter">
+        <i class="fa fa-heart re-margin-bottom re-jumbo"></i>
+        <p class="re-large">Passion</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+          labore
+          et dolore.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+          incididunt
+          ut labore et dolore</p>
+      </div>
+      <div class="re-quarter">
+        <i class="fa fa-diamond re-margin-bottom re-jumbo"></i>
+        <p class="re-large">Design</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+          labore
+          et dolore.</p>
+      </div>
+      <div class="re-quarter">
+        <i class="fa fa-cog re-margin-bottom re-jumbo"></i>
+        <p class="re-large">Support</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+          labore
+          et dolore.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Team Section -->
+  <div class="re-container re-content re-center" style="padding:64px 16px" id="team">
+    <h3 class="re-center">THE TEAM</h3>
+    <p class="re-center re-large">The ones who runs this company</p>
+    <div class="re-row-padding " style="margin-top:64px">
+      <div class="re-col l6 m6 re-margin-bottom">
+        <div class="re-card" style="background-color:#f1f1f1!important">
+          <img src="/assets/tamil.jpg" class="founder">
+          <div class="re-container">
+            <h3>Tamilazhagan</h3>
+            <p class="re-opacity">Founder</p>
+            <p><a href="#contact" class="re-button re-white re-block"><i class="fa fa-envelope"></i>
+                Contact</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="re-col l6 m6 re-margin-bottom">
+        <div class="re-card" style="background-color:#f1f1f1!important">
+          <img src="/assets/praveen.jpg" class="founder">
+          <div class="re-container">
+            <h3>Praveen</h3>
+            <p class="re-opacity">Co-Founder</p>
+            <p><a href="#contact" class="re-button re-white re-block"><i class="fa fa-envelope"></i>
+                Contact</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact Section -->
+  <div class="re-container re-light-grey" style="padding:64px 16px;padding-bottom: 0px;" id="contact">
+    <h3 class="re-center">CONTACT</h3>
+    <p class="re-center re-large">Lets get in touch. Send us a message:</p>
+    <div style="margin-top:48px">
+      <p><i class="fa fa-map-marker fa-fw re-xxlarge re-margin-right"></i> Madipakam, Chennai</p>
+      <p><i class="fa fa-phone fa-fw re-xxlarge re-margin-right"></i> Mobile: 8015172264 , 9597390190</p>
+      <p><i class="fa fa-envelope fa-fw re-xxlarge re-margin-right"> </i> Email: recyclocity@mail.com</p>
+      <p class="re-center re-large">Follow us:
+        <i class="fa fa-instagram fa-fw re-xxlarge re-margin-right"></i>
+        <i class="fa fa-facebook-official fa-fw re-xxlarge re-margin-right"></i>
+      </p>
+      <br>
+      <!-- <form action="/action_page.php" target="_blank">
+        <p><input class="re-input re-border" type="text" placeholder="Name" required name="Name"></p>
+        <p><input class="re-input re-border" type="text" placeholder="Email" required name="Email"></p>
+        <p><input class="re-input re-border" type="text" placeholder="Subject" required name="Subject"></p>
+        <p><input class="re-input re-border" type="text" placeholder="Message" required name="Message"></p>
+        <p>
+          <button class="re-button re-black" type="submit">
+            <i class="fa fa-paper-plane"></i> SEND MESSAGE
+          </button>
+        </p>
+      </form> -->
+    </div>
+  </div>
+</body>
+
+</html>

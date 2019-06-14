@@ -1,0 +1,22 @@
+.cont {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.center-one {
+    background-color: firebrick;
+    font-size: 3.6vw;
+    padding: 1%;
+    border-radius: 4px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.founder {
+    width: 100%;
+    padding: 16%;
+    border-radius: 50%
+}
